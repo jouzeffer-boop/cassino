@@ -10,7 +10,7 @@
 *{box-sizing:border-box}
 body{
 margin:0;
-font-family: 'Segoe UI',system-ui,-apple-system,Arial;
+font-family:'Segoe UI',system-ui,-apple-system,Arial;
 background: radial-gradient(circle at top,#0ea5ff 0%,#020617 55%);
 color:#fff;
 cursor:pointer;
@@ -25,82 +25,55 @@ padding:18px 14px 30px;
 .header{
 background:linear-gradient(180deg,#0b2c55,#020617);
 border-radius:18px;
-padding:16px 14px 20px;
+padding:18px 16px 20px;
 border:1px solid rgba(255,255,255,.12);
 box-shadow:0 25px 55px rgba(0,0,0,.5);
+text-align:center;
 }
 
 .brand{
-display:flex;
-align-items:center;
-gap:8px;
 font-weight:900;
-font-size:17px;
+font-size:20px;
 color:#38bdf8;
-margin-bottom:10px;
-}
-
-.dot{
-width:9px;height:9px;border-radius:99px;
-background:#38bdf8;
-box-shadow:0 0 0 4px rgba(56,189,248,.18);
-}
-
-.badges{
-display:flex;
-gap:8px;
-flex-wrap:wrap;
-margin-bottom:14px;
-}
-
-.badge{
-font-size:11px;
-font-weight:800;
-padding:7px 10px;
-border-radius:999px;
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.12);
+letter-spacing:.5px;
 }
 
 h1{
-font-size:24px;
-margin:0 0 6px;
+font-size:18px;
+margin:6px 0 10px;
 font-weight:900;
 }
 
 .sub{
 font-size:13px;
 color:#cbd5f5;
-line-height:1.35;
+line-height:1.4;
 margin-bottom:14px;
 }
 
-.benefits{
-display:grid;
-gap:10px;
-margin-bottom:16px;
-}
-
-.row{
-display:flex;
-gap:10px;
-align-items:flex-start;
-background:rgba(0,0,0,.22);
-border-radius:14px;
-padding:10px 12px;
+.info-premium{
+margin:10px 0 12px;
+padding:14px 18px;
+border-radius:16px;
+background:rgba(0,0,0,.25);
 border:1px solid rgba(255,255,255,.08);
+box-shadow:0 10px 30px rgba(0,0,0,.35);
+backdrop-filter: blur(6px);
+text-align:left;
 }
 
-.icon{
-width:30px;height:30px;border-radius:10px;
-background:rgba(56,189,248,.15);
-display:grid;place-items:center;
-font-size:14px;
-border:1px solid rgba(56,189,248,.25);
+.info-premium p{
+margin:6px 0;
+font-size:13px;
+line-height:1.45;
+color:#cbd5f5;
+letter-spacing:.2px;
 }
 
-.row strong{font-size:12px}
-.row span{font-size:11px;color:#94a3b8}
+.info-premium strong{
+color:#22c55e;
+font-weight:800;
+}
 
 .cta{
 display:block;
@@ -111,33 +84,18 @@ padding:15px;
 border-radius:14px;
 text-decoration:none;
 font-size:16px;
-margin-top:6px;
+margin-top:8px;
 box-shadow:0 18px 40px rgba(34,197,94,.25);
 }
 
-.cta2{
-display:block;
-margin-top:10px;
-padding:12px;
-border-radius:14px;
-text-decoration:none;
-font-weight:800;
-font-size:13px;
-background:rgba(56,189,248,.15);
-border:1px solid rgba(56,189,248,.25);
-}
-
 .games{
-margin-top:18px;
+margin-top:20px;
 }
 
 .games h2{
-font-size:14px;
+font-size:15px;
 margin:0 0 10px;
 font-weight:900;
-color:#e2e8f0;
-display:flex;
-justify-content:space-between;
 }
 
 .grid{
@@ -182,30 +140,22 @@ margin-top:14px;
 <div class="container">
 
 <div class="header">
-<div class="brand"><div class="dot"></div> cassino.bet.br</div>
+<div class="brand">CASSINO.BET.BR</div>
+<h1>O cassino online com os slots mais lucrativos do Brasil 🇧🇷</h1>
+<div class="sub">Depósitos e saques a partir de R$5 via Pix. Jogos PGSoft e vários outros com apostas a partir de R$0,20.</div>
 
-<div class="badges">
-<div class="badge">Pix liberado</div>
-<div class="badge">saques rápidos</div>
-<div class="badge">depósito R$5</div>
-<div class="badge">mobile</div>
-</div>
-
-<h1>Comece com R$5 hoje</h1>
-<div class="sub">Slots desde R$0,20 e saque mínimo de R$5 via Pix. Clique em qualquer lugar e vá direto ao cadastro.</div>
-
-<div class="benefits">
-<div class="row"><div class="icon">R$</div><div><strong>Depósito mínimo R$5</strong><span>Jogue mesmo com pouco saldo</span></div></div>
-<div class="row"><div class="icon">↗</div><div><strong>Saque mínimo R$5</strong><span>Pix rápido e direto</span></div></div>
-<div class="row"><div class="icon">🎰</div><div><strong>Apostas desde R$0,20</strong><span>Slots PGSoft liberados</span></div></div>
+<div class="info-premium">
+<p><strong>Depósito mínimo:</strong> R$5 para começar</p>
+<p><strong>Saque mínimo:</strong> R$5 via Pix</p>
+<p><strong>Apostas acessíveis:</strong> Slots desde R$0,20</p>
+<p><strong>Maior lucratividade:</strong> Plataforma líder em pagamentos no Brasil</p>
 </div>
 
 <a href="https://cassino.bet.br?ref=546b4a3f21c3" class="cta">CRIAR CONTA AGORA</a>
-<a href="https://cassino.bet.br?ref=546b4a3f21c3" class="cta2">Entrar e ver os jogos</a>
 </div>
 
 <div class="games">
-<h2><span>Jogos em destaque</span><small>toque em qualquer card</small></h2>
+<h2>Jogos em destaque</h2>
 <div class="grid">
 <div class="card"><img src="https://nogamstopcasinos.uk/wp-content/uploads/2024/07/rabbit-logo-big-1024x576.webp"><span>Fortune Rabbit</span></div>
 <div class="card"><img src="https://s2-techtudo.glbimg.com/gHUrnm92SB-DnqlpLZ5iC6KE57M=/0x0:650x446/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/6/d/2vBXlwTAq5YtSIuRNkRg/fortune-tiger-divulgacao.jpg"><span>Fortune Tiger</span></div>
