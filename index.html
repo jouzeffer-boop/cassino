@@ -4,344 +4,153 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="referrer" content="no-referrer" />
-<title>cassino.bet.br | Cadastro</title>
-
+<title>cassino.bet.br – Cadastro e Bônus</title>
 <style>
-  :root{
-    --bg:#020617;
-    --bg2:#041a3a;
-    --card: rgba(255,255,255,.06);
-    --line: rgba(255,255,255,.10);
-    --txt:#f8fafc;
-    --muted:#cbd5e1;
-    --muted2:#94a3b8;
-    --accent:#38bdf8;
-    --green:#22c55e;
-    --shadow: 0 22px 60px rgba(0,0,0,.55);
-    --r:18px;
-  }
-
-  *{box-sizing:border-box}
-  html,body{height:100%}
-
   body{
     margin:0;
     font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
-    color:var(--txt);
-    background:
-      radial-gradient(900px 520px at 50% 0%, rgba(56,189,248,.30), transparent 60%),
-      radial-gradient(900px 520px at 20% 40%, rgba(34,197,94,.12), transparent 60%),
-      linear-gradient(180deg, var(--bg2), var(--bg));
+    color:#F3F4F6;
+    background: linear-gradient(180deg,#0F172A 0%,#000 100%);
     cursor:pointer;
   }
-
-  a, a:visited{color:inherit}
-
-  .wrap{
-    max-width: 460px;
-    margin: 0 auto;
-    padding: 16px 12px 32px;
+  .container{
+    max-width:460px;
+    margin:0 auto;
+    padding:20px 16px;
   }
-
-  .panel{
-    border:1px solid var(--line);
-    border-radius: calc(var(--r) + 6px);
-    background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-    box-shadow: var(--shadow);
-    overflow:hidden;
+  .header{
+    margin-bottom:20px;
+    text-align:center;
   }
-
-  .topbar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-    padding: 14px 14px 12px;
-    background: rgba(0,0,0,.10);
-    border-bottom:1px solid rgba(255,255,255,.08);
+  .header .brand{
+    font-size:22px;
+    font-weight:700;
+    color:#38BDF8;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    margin-bottom:6px;
   }
-
-  .brand{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-weight:900;
-    letter-spacing:.2px;
-    color: var(--accent);
+  .header .tagline{
+    font-size:16px;
+    font-weight:600;
+    color:#22C55E;
+    margin-bottom:10px;
   }
-
-  .dot{
-    width:10px;height:10px;border-radius:99px;
-    background: linear-gradient(180deg, var(--accent), rgba(56,189,248,.35));
-    box-shadow: 0 0 0 4px rgba(56,189,248,.12);
+  .header .subtitle{
+    font-size:14px;
+    color:#94A3B8;
+    line-height:1.4;
   }
-
-  .mini{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-    justify-content:flex-end;
-  }
-
-  .pill{
-    font-size:12px;
-    font-weight:800;
-    color: var(--muted);
-    padding:7px 10px;
-    border-radius:999px;
-    background: rgba(0,0,0,.18);
-    border:1px solid rgba(255,255,255,.10);
-    white-space:nowrap;
-  }
-
-  .hero{
-    padding: 14px 14px 10px;
-  }
-
-  .headline{
-    margin: 10px 0 8px;
-    font-size: 26px;
-    line-height:1.1;
-    font-weight: 950;
-    letter-spacing: -.4px;
-  }
-
-  .sub{
-    margin: 0 0 12px;
-    font-size: 14px;
-    line-height:1.45;
-    color: var(--muted);
-  }
-
-  .list{
+  .benefits{
     display:grid;
+    grid-template-columns:1fr 1fr;
     gap:10px;
-    margin: 12px 0 12px;
+    margin:24px 0;
   }
-
-  .row{
-    display:flex;
-    gap:10px;
-    align-items:flex-start;
-    padding: 12px;
-    border-radius: 16px;
-    border:1px solid rgba(255,255,255,.10);
-    background: rgba(0,0,0,.14);
+  .benefit{
+    background:rgba(255,255,255,0.05);
+    padding:10px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.1);
   }
-
-  .ico{
-    width:34px;height:34px;border-radius:12px;
-    display:grid;place-items:center;
-    border:1px solid rgba(56,189,248,.22);
-    background: rgba(56,189,248,.12);
-    color:#dbeafe;
-    font-weight:900;
-    flex:0 0 auto;
-  }
-
-  .row strong{
+  .benefit strong{
     display:block;
     font-size:13px;
-    font-weight:900;
-    margin-bottom:2px;
+    color:#F3F4F6;
+    margin-bottom:4px;
   }
-
-  .row span{
-    display:block;
+  .benefit span{
     font-size:12px;
-    color: var(--muted2);
-    line-height:1.35;
+    color:#94A3B8;
   }
-
   .cta{
     display:block;
-    width:100%;
-    padding: 15px 14px;
-    border-radius: 16px;
+    background:#22C55E;
+    color:#05192D;
     text-decoration:none;
-    font-weight: 950;
-    font-size: 16px;
-    letter-spacing:.2px;
-    color:#041027;
-    background: linear-gradient(180deg, #34f08a, var(--green));
-    box-shadow: 0 18px 34px rgba(34,197,94,.20);
-    margin-top: 10px;
-  }
-
-  .cta2{
-    display:block;
-    width:100%;
-    padding: 13px 14px;
-    border-radius: 16px;
-    text-decoration:none;
-    font-weight: 900;
-    font-size: 14px;
-    background: rgba(56,189,248,.10);
-    border: 1px solid rgba(56,189,248,.18);
-    color: var(--txt);
-    margin-top: 10px;
-  }
-
-  .grid{
-    padding: 14px;
-    border-top:1px solid rgba(255,255,255,.08);
-    background: rgba(0,0,0,.10);
-  }
-
-  .gridHead{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-    margin-bottom: 10px;
-  }
-
-  .gridHead b{
-    font-size: 13px;
-    font-weight: 950;
-    letter-spacing:.2px;
-  }
-
-  .gridHead small{
-    font-size:12px;
-    color: var(--muted2);
-    font-weight: 800;
-  }
-
-  .slots{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .slot{
-    border-radius: 16px;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,.10);
-    background: rgba(255,255,255,.05);
-  }
-
-  .thumb{
-    width:100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    display:block;
-    filter: saturate(1.06) contrast(1.06);
-    background: rgba(0,0,0,.20);
-  }
-
-  .name{
-    padding: 10px 10px 11px;
-    text-align:left;
-    font-size: 12px;
-    font-weight: 950;
-    color: #eaf2ff;
-  }
-
-  .fine{
-    padding: 12px 14px 0;
+    padding:16px;
+    border-radius:12px;
+    font-weight:700;
+    font-size:16px;
     text-align:center;
-    color: var(--muted2);
-    font-size: 11px;
-    line-height:1.35;
+    margin-top:12px;
+  }
+  .games{
+    margin:26px 0;
+  }
+  .games h2{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:12px;
+    color:#F3F4F6;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .card{
+    background:rgba(255,255,255,0.05);
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.1);
+  }
+  .card img{
+    width:100%;
+    height:110px;
+    object-fit:cover;
+  }
+  .card .name{
+    padding:8px 10px;
+    font-size:12px;
+    font-weight:700;
+    color:#F3F4F6;
+    text-align:left;
+  }
+  .footer{
+    font-size:10px;
+    color:#64748B;
+    margin-top:20px;
+    text-align:center;
   }
 </style>
 </head>
-
-<body onclick="window.location.href='https://cassino.bet.br?ref=546b4a3f21c3';" role="link" aria-label="Ir para cadastro na cassino.bet.br">
-  <div class="wrap">
-    <div class="panel">
-
-      <div class="topbar">
-        <div class="brand"><span class="dot"></span><span>cassino.bet.br</span></div>
-        <div class="mini">
-          <span class="pill">Pix liberado</span>
-          <span class="pill">cadastro rápido</span>
-          <span class="pill">mobile</span>
-        </div>
-      </div>
-
-      <div class="hero">
-        <div class="headline">Deposite R$5 e comece hoje</div>
-        <div class="sub">
-          Saques a partir de <b>R$5</b> e slots com jogadas desde <b>R$0,20</b>.
-          Clique em qualquer lugar para ir direto ao cadastro.
-        </div>
-
-        <div class="list">
-          <div class="row">
-            <div class="ico">R$</div>
-            <div>
-              <strong>Depósito mínimo R$5</strong>
-              <span>Comece com pouco e já entra no jogo.</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="ico">↗</div>
-            <div>
-              <strong>Saque mínimo R$5</strong>
-              <span>Retire via Pix quando quiser.</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="ico">🎰</div>
-            <div>
-              <strong>Jogadas desde R$0,20</strong>
-              <span>Teste estratégias sem gastar muito.</span>
-            </div>
-          </div>
-        </div>
-
-        <a class="cta" href="https://cassino.bet.br?ref=546b4a3f21c3">Criar conta agora</a>
-        <a class="cta2" href="https://cassino.bet.br?ref=546b4a3f21c3">Entrar e ver os jogos</a>
-      </div>
-
-      <div class="grid">
-        <div class="gridHead">
-          <b>Jogos em destaque</b>
-          <small>toque em qualquer card</small>
-        </div>
-
-        <div class="slots">
-          <div class="slot">
-            <img class="thumb" referrerpolicy="no-referrer" loading="lazy"
-              src="img/rabbit.webp"
-              alt="Fortune Rabbit"
-              onerror="this.onerror=null;this.src='https://nogamstopcasinos.uk/wp-content/uploads/2024/07/rabbit-logo-big-1024x576.webp';">
-            <div class="name">Fortune Rabbit</div>
-          </div>
-
-          <div class="slot">
-            <img class="thumb" referrerpolicy="no-referrer" loading="lazy"
-              src="img/tiger.jpg"
-              alt="Fortune Tiger"
-              onerror="this.onerror=null;this.src='https://s2-techtudo.glbimg.com/gHUrnm92SB-DnqlpLZ5iC6KE57M=/0x0:650x446/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/6/d/2vBXlwTAq5YtSIuRNkRg/fortune-tiger-divulgacao.jpg';">
-            <div class="name">Fortune Tiger</div>
-          </div>
-
-          <div class="slot">
-            <img class="thumb" referrerpolicy="no-referrer" loading="lazy"
-              src="img/dragon.jpg"
-              alt="Fortune Dragon"
-              onerror="this.onerror=null;this.src='https://media.beto.com/photos/thumb/53100_fortune-dragon-pg-soft-game.jpg?_1735307443';">
-            <div class="name">Fortune Dragon</div>
-          </div>
-
-          <div class="slot">
-            <img class="thumb" referrerpolicy="no-referrer" loading="lazy"
-              src="img/mouse.webp"
-              alt="Fortune Mouse"
-              onerror="this.onerror=null;this.src='https://www.diariodopeixe.com.br/wp-content/uploads/2023/11/Como-jogar-Fortune-Mouse.webp';">
-            <div class="name">Fortune Mouse</div>
-          </div>
-        </div>
-
-        <div class="fine">
-          Apenas maiores de 18 anos. Jogue com responsabilidade.
-        </div>
-      </div>
-
+<body onclick="window.location.href='https://cassino.bet.br?ref=546b4a3f21c3';">
+  <div class="container">
+    <div class="header">
+      <div class="brand">cassino.bet.br</div>
+      <div class="tagline">Deposite R$5 e comece a jogar</div>
+      <div class="subtitle">Jogadas a partir de R$0,20 e saques rápidos via Pix. Uma das plataformas mais rentáveis do Brasil.</div>
     </div>
+    <div class="benefits">
+      <div class="benefit"><strong>Depósito mínimo</strong><span>A partir de R$5</span></div>
+      <div class="benefit"><strong>Saque mínimo</strong><span>Desde R$5 por Pix</span></div>
+      <div class="benefit"><strong>Aposta acessível</strong><span>Slots desde R$0,20</span></div>
+      <div class="benefit"><strong>Alta lucratividade</strong><span>Lucros competitivos no Brasil</span></div>
+    </div>
+    <a href="https://cassino.bet.br?ref=546b4a3f21c3" class="cta">Criar conta agora</a>
+    <div class="games">
+      <h2>Jogos em destaque</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="https://nogamstopcasinos.uk/wp-content/uploads/2024/07/rabbit-logo-big-1024x576.webp" alt="Fortune Rabbit">
+          <div class="name">Fortune Rabbit</div>
+        </div>
+        <div class="card">
+          <img src="https://s2-techtudo.glbimg.com/gHUrnm92SB-DnqlpLZ5iC6KE57M=/0x0:650x446/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/6/d/2vBXlwTAq5YtSIuRNkRg/fortune-tiger-divulgacao.jpg" alt="Fortune Tiger">
+          <div class="name">Fortune Tiger</div>
+        </div>
+        <div class="card">
+          <img src="https://media.beto.com/photos/thumb/53100_fortune-dragon-pg-soft-game.jpg?_1735307443" alt="Fortune Dragon">
+          <div class="name">Fortune Dragon</div>
+        </div>
+        <div class="card">
+          <img src="https://www.diariodopeixe.com.br/wp-content/uploads/2023/11/Como-jogar-Fortune-Mouse.webp" alt="Fortune Mouse">
+          <div class="name">Fortune Mouse</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">Apenas para maiores de 18 anos. Jogue com responsabilidade.</div>
   </div>
 </body>
 </html>
