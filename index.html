@@ -8,15 +8,18 @@
 
 <style>
   :root{
-    --bg1:#071a3a;
-    --bg2:#020617;
-    --card:#071225;
-    --line:#1e293b;
-    --txt:#ffffff;
-    --muted:#cbd5f5;
+    --bg0:#020617;
+    --bg1:#061a3a;
+    --card:rgba(255,255,255,.06);
+    --line:rgba(255,255,255,.10);
+    --txt:#f8fafc;
+    --muted:#cbd5e1;
+    --muted2:#94a3b8;
     --accent:#38bdf8;
     --cta:#22c55e;
-    --cta2:#2aa2ff;
+    --cta2:#1d4ed8;
+    --shadow: 0 22px 55px rgba(0,0,0,.45);
+    --r:18px;
   }
 
   *{box-sizing:border-box}
@@ -24,238 +27,122 @@
 
   body{
     margin:0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     color:var(--txt);
-    text-align:center;
     background:
-      radial-gradient(900px 520px at 50% 0%, rgba(56,189,248,.45), transparent 60%),
-      radial-gradient(700px 420px at 20% 30%, rgba(34,197,94,.18), transparent 60%),
-      linear-gradient(180deg, var(--bg1), var(--bg2));
+      radial-gradient(1100px 560px at 50% 0%, rgba(56,189,248,.35), transparent 60%),
+      radial-gradient(900px 520px at 15% 20%, rgba(34,197,94,.16), transparent 62%),
+      radial-gradient(800px 500px at 90% 35%, rgba(29,78,216,.18), transparent 62%),
+      linear-gradient(180deg, var(--bg1), var(--bg0));
     cursor:pointer;
   }
 
   a, a:visited{color:inherit}
+  .wrap{max-width:460px;margin:0 auto;padding:18px 14px 36px}
 
-  .container{
-    max-width:440px;
-    margin:auto;
-    padding:18px 14px 36px;
-  }
-
-  .top{
-    border:1px solid rgba(255,255,255,.10);
-    border-radius:16px;
-    background: rgba(0,0,0,.16);
-    backdrop-filter: blur(10px);
-    padding:16px 14px 14px;
-    box-shadow: 0 18px 45px rgba(0,0,0,.35);
-  }
-
-  .brand{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    font-weight:900;
-    letter-spacing:.2px;
-    color:var(--accent);
-    margin-bottom:10px;
-    font-size:18px;
-  }
-  .badge{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-size:12px;
-    font-weight:900;
-    padding:7px 10px;
-    border-radius:999px;
-    background: rgba(42,162,255,.14);
-    border:1px solid rgba(42,162,255,.28);
-    color:#dbeafe;
-    margin: 0 auto 10px;
-  }
-
-  h1{
-    margin:6px 0 8px;
-    font-size:24px;
-    font-weight:900;
-    line-height:1.15;
-  }
-
-  .sub{
-    margin:0 0 14px;
-    color:var(--muted);
-    font-size:14px;
-    line-height:1.35;
-  }
-
-  .benefits{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap:10px;
-    margin-top:12px;
-  }
-
-  .b{
-    background: rgba(2,6,23,.55);
-    border:1px solid rgba(255,255,255,.10);
-    border-radius:14px;
-    padding:10px 10px;
-    text-align:left;
-  }
-  .b strong{
-    display:block;
-    font-size:12px;
-    letter-spacing:.2px;
-    margin-bottom:4px;
-  }
-  .b span{
-    display:block;
-    font-size:12px;
-    color:var(--muted);
-    line-height:1.25;
-  }
-
-  .slots{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-    margin:14px 0 14px;
-  }
-
-  .slot{
-    background: rgba(2,6,23,.55);
-    border-radius:14px;
+  .panel{
+    border:1px solid var(--line);
+    border-radius:calc(var(--r) + 6px);
+    background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+    box-shadow:var(--shadow);
     overflow:hidden;
-    border:1px solid rgba(255,255,255,.10);
-    box-shadow: 0 12px 26px rgba(0,0,0,.22);
   }
 
-  .slot img{
-    width:100%;
-    height:118px;
-    object-fit:cover;
-    display:block;
+  .hero{padding:18px 16px 14px;position:relative}
+  .hero:before{
+    content:"";
+    position:absolute;
+    inset:-80px -40px auto -40px;
+    height:220px;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(56,189,248,.35), transparent 60%),
+      radial-gradient(circle at 70% 40%, rgba(34,197,94,.18), transparent 60%);
+    pointer-events:none;
   }
 
-  .name{
-    font-size:12px;
-    font-weight:900;
-    padding:9px 10px;
-    text-align:left;
-    color:#eaf2ff;
-  }
+  .topline{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:10px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:900}
+  .dot{width:10px;height:10px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(56,189,248,.12)}
+  .pill{padding:8px 10px;border-radius:999px;font-size:12px;font-weight:700;background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.12);color:var(--muted)}
 
+  .title{font-size:26px;font-weight:900;margin:8px 0}
+  .subtitle{font-size:14px;color:var(--muted);line-height:1.45;margin-bottom:14px}
+
+  .bullets{display:grid;gap:10px;margin-bottom:14px}
+  .bullet{display:flex;gap:10px;padding:12px;border-radius:14px;background:rgba(0,0,0,.16);border:1px solid rgba(255,255,255,.10)}
+  .ico{width:34px;height:34px;border-radius:12px;background:rgba(56,189,248,.14);display:grid;place-items:center;font-weight:900;color:#dbeafe}
+  .bullet strong{font-size:13px}
+  .bullet span{font-size:12px;color:var(--muted2)}
+
+  .ctaArea{display:grid;gap:10px}
   .cta{
     display:block;
-    width:100%;
-    background: linear-gradient(180deg, var(--cta), #18c45f);
-    color:#041027;
-    padding:16px 14px;
-    border-radius:14px;
-    font-size:18px;
-    font-weight:900;
+    padding:15px;
+    border-radius:16px;
     text-decoration:none;
-    margin-top:12px;
-    box-shadow: 0 16px 34px rgba(34,197,94,.22);
+    font-weight:900;
+    font-size:16px;
+    background:linear-gradient(180deg,#34f08a,var(--cta));
+    color:#03120a;
   }
-
   .cta2{
     display:block;
-    width:100%;
-    background: rgba(42,162,255,.14);
-    border:1px solid rgba(42,162,255,.30);
-    color:var(--txt);
-    padding:12px 14px;
-    border-radius:14px;
+    padding:13px;
+    border-radius:16px;
     font-size:14px;
     font-weight:900;
-    text-decoration:none;
-    margin-top:10px;
+    background:rgba(56,189,248,.12);
+    border:1px solid rgba(56,189,248,.22);
   }
 
-  .small{
-    font-size:11px;
-    color:#94a3b8;
-    margin-top:14px;
-    line-height:1.35;
-  }
+  .grid{padding:14px;border-top:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.10)}
+  .gridHead{display:flex;justify-content:space-between;font-size:12px;margin-bottom:10px;color:var(--muted2)}
+  .slots{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .slot{border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.10)}
+  .slot img{width:100%;height:120px;object-fit:cover}
+  .name{padding:10px;font-size:12px;font-weight:900;text-align:left}
+
+  .fine{font-size:11px;color:var(--muted2);margin-top:12px}
 </style>
 </head>
 
-<body onclick="window.location.href='https://cassino.bet.br?ref=546b4a3f21c3';" role="link" aria-label="Ir para cadastro na cassino.bet.br">
-  <div class="container">
+<body onclick="window.location.href='https://cassino.bet.br?ref=546b4a3f21c3';">
+<div class="wrap">
+<div class="panel">
 
-    <div class="top">
-      <div class="brand">cassino.bet.br</div>
+<div class="hero">
+<div class="topline">
+<div class="brand"><span class="dot"></span>cassino.bet.br</div>
+<div class="pill">Pix • mobile rápido</div>
+</div>
 
-      <div class="badge">Pix liberado • cadastro rápido • mobile</div>
+<div class="title">Deposite R$5 e comece hoje</div>
+<div class="subtitle">Saques a partir de R$5 e slots desde R$0,20</div>
 
-      <h1>Comece com pouco e jogue agora</h1>
-      <p class="sub">
-        Depósito mínimo de <b>R$5</b>, saques a partir de <b>R$5</b> e slots com jogadas desde <b>R$0,20</b>.
-        Plataforma focada em alta lucratividade e experiência rápida no Brasil.
-      </p>
+<div class="bullets">
+<div class="bullet"><div class="ico">R$</div><div><strong>Depósito mínimo</strong><span>R$5</span></div></div>
+<div class="bullet"><div class="ico">↗</div><div><strong>Saque mínimo</strong><span>R$5 via Pix</span></div></div>
+<div class="bullet"><div class="ico">🎰</div><div><strong>Jogadas</strong><span>desde R$0,20</span></div></div>
+</div>
 
-      <div class="benefits">
-        <div class="b">
-          <strong>Depósito mínimo</strong>
-          <span>R$5 para começar</span>
-        </div>
-        <div class="b">
-          <strong>Saque mínimo</strong>
-          <span>a partir de R$5</span>
-        </div>
-        <div class="b">
-          <strong>Jogadas baratas</strong>
-          <span>slots desde R$0,20</span>
-        </div>
-        <div class="b">
-          <strong>Mobile first</strong>
-          <span>abre rápido e direto</span>
-        </div>
-      </div>
+<div class="ctaArea">
+<a class="cta" href="https://cassino.bet.br?ref=546b4a3f21c3">Criar conta agora</a>
+<a class="cta2" href="https://cassino.bet.br?ref=546b4a3f21c3">Entrar e ver jogos</a>
+</div>
+</div>
 
-      <a class="cta" href="https://cassino.bet.br?ref=546b4a3f21c3">CRIAR CONTA AGORA</a>
-      <a class="cta2" href="https://cassino.bet.br?ref=546b4a3f21c3">Ver jogos e entrar</a>
+<div class="grid">
+<div class="gridHead"><b>Jogos em destaque</b><span>PGSoft</span></div>
+<div class="slots">
+<div class="slot"><img src="https://nogamstopcasinos.uk/wp-content/uploads/2024/07/rabbit-logo-big-1024x576.webp"><div class="name">Fortune Rabbit</div></div>
+<div class="slot"><img src="https://s2-techtudo.glbimg.com/gHUrnm92SB-DnqlpLZ5iC6KE57M=/0x0:650x446/984x0/smart/fortune-tiger-divulgacao.jpg"><div class="name">Fortune Tiger</div></div>
+<div class="slot"><img src="https://media.beto.com/photos/thumb/53100_fortune-dragon-pg-soft-game.jpg?_1735307443"><div class="name">Fortune Dragon</div></div>
+<div class="slot"><img src="https://www.diariodopeixe.com.br/wp-content/uploads/2023/11/Como-jogar-Fortune-Mouse.webp"><div class="name">Fortune Mouse</div></div>
+</div>
+<div class="fine">18+ Jogue com responsabilidade.</div>
+</div>
 
-      <div class="slots" aria-label="Jogos em destaque">
-        <div class="slot">
-          <img referrerpolicy="no-referrer" loading="lazy"
-               src="https://nogamstopcasinos.uk/wp-content/uploads/2024/07/rabbit-logo-big-1024x576.webp"
-               alt="Fortune Rabbit">
-          <div class="name">Fortune Rabbit</div>
-        </div>
-
-        <div class="slot">
-          <img referrerpolicy="no-referrer" loading="lazy"
-               src="https://s2-techtudo.glbimg.com/gHUrnm92SB-DnqlpLZ5iC6KE57M=/0x0:650x446/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/6/d/2vBXlwTAq5YtSIuRNkRg/fortune-tiger-divulgacao.jpg"
-               alt="Fortune Tiger">
-          <div class="name">Fortune Tiger</div>
-        </div>
-
-        <div class="slot">
-          <img referrerpolicy="no-referrer" loading="lazy"
-               src="https://media.beto.com/photos/thumb/53100_fortune-dragon-pg-soft-game.jpg?_1735307443"
-               alt="Fortune Dragon">
-          <div class="name">Fortune Dragon</div>
-        </div>
-
-        <div class="slot">
-          <img referrerpolicy="no-referrer" loading="lazy"
-               src="https://www.diariodopeixe.com.br/wp-content/uploads/2023/11/Como-jogar-Fortune-Mouse.webp"
-               alt="Fortune Mouse">
-          <div class="name">Fortune Mouse</div>
-        </div>
-      </div>
-
-      <div class="small">
-        Ao clicar em qualquer lugar desta página você será direcionado ao cadastro.
-        Apenas maiores de 18 anos. Jogue com responsabilidade.
-      </div>
-    </div>
-
-  </div>
+</div>
+</div>
 </body>
 </html>
