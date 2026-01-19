@@ -1,136 +1,90 @@
+Isso acontece MUITO: os links abrem normal no seu navegador, mas NÃO carregam dentro do <img> porque o site de origem bloqueia “hotlink” (anti-leech). Ou seja: ele detecta o Referer (sua página do GitHub) e devolve 403/denied, então a imagem quebra mesmo com URL correta.
+
+Tem 2 soluções:
+
+1) Solução rápida (tentar burlar o bloqueio por Referer)
+2) Solução definitiva (hospedar as imagens no seu próprio GitHub repo)
+
+Vamos pela rápida primeiro:
+
+1) Cole isso no seu index.html (só adiciona 1 meta e referrerpolicy em cada img)
+
+- Adicione no <head>:
+<meta name="referrer" content="no-referrer">
+
+- E em cada imagem:
+referrerpolicy="no-referrer"
+
+Aqui vai seu código já corrigido:
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
 <title>Slots mais jogados no Brasil</title>
 
 <style>
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background: radial-gradient(circle at top, #0ea5ff 0%, #020617 60%);
-color:white;
-text-align:center;
-}
-
-.container{
-max-width:420px;
-margin:auto;
-padding:20px 15px 40px;
-}
-
-.logo{
-font-size:22px;
-font-weight:bold;
-margin-bottom:10px;
-color:#38bdf8;
-}
-
-h1{
-font-size:24px;
-margin:10px 0 5px;
-}
-
-p{
-color:#cbd5f5;
-font-size:14px;
-margin-bottom:15px;
-}
-
-.slots{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-margin-bottom:20px;
-}
-
-.slot{
-background:#020617;
-border-radius:12px;
-overflow:hidden;
-border:1px solid #1e293b;
-}
-
-.slot img{
-width:100%;
-height:110px;
-object-fit:cover;
-display:block;
-}
-
-.name{
-font-size:12px;
-font-weight:bold;
-padding:8px 0;
-background:#020617;
-}
-
-.cta{
-display:block;
-background:#22c55e;
-color:black;
-padding:16px;
-border-radius:12px;
-font-size:18px;
-font-weight:bold;
-text-decoration:none;
-margin-top:10px;
-}
-
-.cta:hover{
-background:#4ade80;
-}
-
-.small{
-font-size:11px;
-color:#94a3b8;
-margin-top:16px;
-line-height:1.4;
-}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at top,#0ea5ff 0%,#020617 60%);color:#fff;text-align:center}
+.container{max-width:420px;margin:auto;padding:20px 15px 40px}
+.logo{font-size:22px;font-weight:bold;margin-bottom:10px;color:#38bdf8}
+h1{font-size:24px;margin:10px 0 5px}
+p{color:#cbd5f5;font-size:14px;margin-bottom:15px}
+.slots{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+.slot{background:#020617;border-radius:12px;overflow:hidden;border:1px solid #1e293b}
+.slot img{width:100%;height:110px;object-fit:cover;display:block}
+.name{font-size:12px;font-weight:bold;padding:8px 0;background:#020617}
+.cta{display:block;background:#22c55e;color:#000;padding:16px;border-radius:12px;font-size:18px;font-weight:bold;text-decoration:none;margin-top:10px}
+.cta:hover{background:#4ade80}
+.small{font-size:11px;color:#94a3b8;margin-top:16px;line-height:1.4}
 </style>
 </head>
 
 <body>
 <div class="container">
+  <div class="logo">cassino.bet.br</div>
+  <h1>Slots que mais pagam no Brasil 🎰</h1>
+  <p>Cadastre-se para jogar online e sacar via Pix</p>
 
-<div class="logo">cassino.bet.br</div>
+  <div class="slots">
+    <div class="slot">
+      <img referrerpolicy="no-referrer" src="https://img.tapimg.net/market/images/98b145dc957717c2de4b8ae28783d650.jpg?imageView2/2/w/720/h/720/q/80/format/jpg/interlace/1/ignore-error/1&t=1" alt="Fortune Rabbit" loading="lazy">
+      <div class="name">Fortune Rabbit</div>
+    </div>
 
-<h1>Slots que mais pagam no Brasil 🎰</h1>
-<p>Cadastre-se para jogar online e sacar via Pix</p>
+    <div class="slot">
+      <img referrerpolicy="no-referrer" src="https://s2-techtudo.glbimg.com/gHUrnm92SB-DnqlpLZ5iC6KE57M=/0x0:650x446/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/6/d/2vBXlwTAq5YtSIuRNkRg/fortune-tiger-divulgacao.jpg" alt="Fortune Tiger" loading="lazy">
+      <div class="name">Fortune Tiger</div>
+    </div>
 
-<div class="slots">
+    <div class="slot">
+      <img referrerpolicy="no-referrer" src="https://media.beto.com/photos/thumb/53100_fortune-dragon-pg-soft-game.jpg" alt="Fortune Dragon" loading="lazy">
+      <div class="name">Fortune Dragon</div>
+    </div>
 
-<div class="slot">
-<img src="https://img.tapimg.net/market/images/98b145dc957717c2de4b8ae28783d650.jpg">
-<div class="name">Fortune Rabbit</div>
-</div>
+    <div class="slot">
+      <img referrerpolicy="no-referrer" src="https://www.diariodopeixe.com.br/wp-content/uploads/2023/11/Como-jogar-Fortune-Mouse.webp" alt="Fortune Mouse" loading="lazy">
+      <div class="name">Fortune Mouse</div>
+    </div>
+  </div>
 
-<div class="slot">
-<img src="https://s2-techtudo.glbimg.com/gHUrnm92SB-DnqlpLZ5iC6KE57M=/0x0:650x446/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/6/d/2vBXlwTAq5YtSIuRNkRg/fortune-tiger-divulgacao.jpg">
-<div class="name">Fortune Tiger</div>
-</div>
-
-<div class="slot">
-<img src="https://media.beto.com/photos/thumb/53100_fortune-dragon-pg-soft-game.jpg">
-<div class="name">Fortune Dragon</div>
-</div>
-
-<div class="slot">
-<img src="https://www.diariodopeixe.com.br/wp-content/uploads/2023/11/Como-jogar-Fortune-Mouse.webp">
-<div class="name">Fortune Mouse</div>
-</div>
-
-</div>
-
-<a href="LINK_DE_AFILIADO" class="cta">
-ENTRAR NO CASSINO
-</a>
-
-<div class="small">
-Apenas maiores de 18 anos. Jogue com responsabilidade.
-</div>
-
+  <a href="LINK_DE_AFILIADO" class="cta">ENTRAR NO CASSINO</a>
+  <div class="small">Apenas maiores de 18 anos. Jogue com responsabilidade.</div>
 </div>
 </body>
 </html>
+
+Se ainda assim não carregar, é porque o servidor bloqueia de outras formas (token/cabeçalhos), e aí só resolve com a solução definitiva:
+
+2) Solução definitiva (recomendada)
+- Baixe as 4 imagens no seu PC
+- No GitHub, crie uma pasta img e faça upload delas
+- Renomeie para: rabbit.jpg, tiger.jpg, dragon.jpg, mouse.jpg
+- Troque os src para:
+img/rabbit.jpg
+img/tiger.jpg
+img/dragon.jpg
+img/mouse.jpg
+
+Se você me mandar um print do “console” (F12 → Console / Network) onde aparece o erro (403, blocked, CORS, etc.), eu te digo na hora qual das duas soluções é obrigatória.
